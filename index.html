@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casas Kiwa - Programa de Artes (Dibujo, Danza, Teatro y Porras) </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<script>
+  function mostrarSeccion(seccion) {
+    const informe = document.getElementById('informe');
+    const tablero = document.getElementById('tablero');
+
+    informe.classList.remove('mostrar');
+    tablero.classList.remove('mostrar');
+
+    if (seccion === 'informe') {
+      tablero.style.display = 'none';
+      informe.style.display = 'block';
+      setTimeout(() => informe.classList.add('mostrar'), 10);
+    } else {
+      informe.style.display = 'none';
+      tablero.style.display = 'block';
+      setTimeout(() => tablero.classList.add('mostrar'), 10);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    mostrarSeccion('informe');
+  });
+</script>
+
+<script>
+  function mostrarFirma(input, contenedorId) {
+    const contenedor = document.getElementById(contenedorId);
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        contenedor.style.backgroundImage = `url('${e.target.result}')`;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function toggleComentario(mostrar) {
+    const campo = document.getElementById('comentario-recomendaciones');
+    campo.style.display = mostrar ? 'block' : 'none';
+  }
+</script>
+
+<script>
+  function toggleComentario(mostrar) {
+    const campo = document.getElementById('comentario-recomendaciones');
+    campo.style.display = mostrar ? 'block' : 'none';
+  }
+</script>
+
+<body>
+
+  <header class="encabezado">
+    <div class="logos">
+      <img src="Encabezado FSA.PNG" alt="Encabezado FSA" class="fsa-header">
+    </div>
+  </header>
+ 
+    <main>
+      <div class="botonera">
+        <button onclick="mostrarSeccion('informe')">📄 Ver Informe</button>
+        <button onclick="mostrarSeccion('tablero')">📊 Ver Tablero de Control</button>
+      </div>
+    
+      <section id="tablero" class="seccion-oculta">
+        <div class="looker">
+          <h2>Tablero de Control - Visualización Interactiva</h2>
+          <iframe 
+            width="100%" 
+            height="686" 
+            src="https://lookerstudio.google.com/reporting/46386242-adff-436e-81b3-b30b638f6d63/page/p_j7crb5eltd" 
+            frameborder="0" 
+            style="border:0" 
+            allowfullscreen 
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+          </iframe>
+        </div>
+      </section> 
+
+      <section id="informe">
+        <section class="intro">
+
+        <h2 class="titulo-informe">INFORME TÉCNICO DE JUNIO DEL PROGRAMA CASAS KIWA</h2>
+      
+        <div class="datos-resumen">
+          <div><strong>FECHA DE EDICIÓN:</strong> 25/06/2025</div>
+          <div><strong>CÓDIGO:</strong> F-GS-37 V2</div>
+        </div>
+      
+        <div class="tabla-informe">
+          <div><strong>NOMBRE DEL PROGRAMA O PROYECTO:</strong> Casas Kiwa - Programa de Artes (Dibujo, Danza, Teatro y Porras)</div>
+          <div><strong>NOMBRE DEL RESPONSABLE O COORDINADOR:</strong> Jimmy Alexander Caballero Moreno</div>
+          <div><strong>FECHA DE INICIO:</strong> 01/06/2025</div>
+          <div><strong>FECHA DE CIERRE:</strong> 25/06/2025</div>
+        </div>
+      
+        <div class="objetivo">
+          <strong>OBJETIVO DEL PROGRAMA O PROYECTO:</strong>
+          <p>
+            Potenciar y reforzar la creatividad y la autonomía de niñas, niños y adolescentes en dibujo, danza, teatro y porras mediante procesos individuales y colaborativos basados en la Metodología CREA (Concentración · Recursos · Exploración · Adaptabilidad). Además, propiciar que estas competencias se desplieguen en actividades de muestra de proceso, donde puedan evidenciar y reconocer de forma activa los conocimientos y habilidades adquiridos. Todo ello, respaldado por herramientas digitales de apoyo al docente y la sistematización de evidencias en cada fase formativa, para garantizar un acompañamiento pedagógico riguroso y transparente.
+          </p>
+        </div>
+      </section>
+
+      <section class="seguimiento">
+        <div class="participacion">
+          <h3>Participación</h3>
+          <ul>
+            <li><strong>Número proyectado de NNA participantes:</strong> 799</li>
+            <li><strong>Número de NNA participantes:</strong> 498</li>
+            <li><strong>% de impacto:</strong> 62.3%</li>
+          </ul>
+        </div>
+      
+        <h3>Seguimiento y control al programa o proyecto</h3>
+      
+        <table class="tabla-seguimiento">
+          <thead>
+            <tr>
+              <th>Tipo de Indicador</th>
+              <th>Indicadores</th>
+              <th>Resultados</th>
+              <th>Evidencias<br><small>(Se adjuntan a este informe)</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Resultado<br>(Propósito y/o Fin)</strong></td>
+              <td>Número de estudiantes que muestran avances significativos</td>
+              <td>Total por todos los centros 80.7% (402), Arroyo 80% (72), Betania 75.5% (37), Lucero 65.2% (62), Padre Misericordioso A 100% (42), Padre Misericordioso B 76.3% (45), Jerusalén 81.8% (54), Santo Domingo 93.5% (72), San Juan de Dios 98% (18)</td>
+              <td class="evidencias-cell">
+              <div class="btn-group">
+                <a href="https://musicalaescuela.github.io/RegistrosFSACoordinaci-n/" class="btn-evidencias" target="_blank">✅ Registros de clase</a>
+                <a href="https://musicala.github.io/diagnosticos/" class="btn-evidencias" target="_blank">⏰ Diagnósticos</a>´
+                <a href="https://musicala.github.io/proyectosfsa/" class="btn-evidencias" target="_blank">⏰ Proyectos</a>
+                <a href="https://drive.google.com/drive/folders/1AC-BjyYXiEcB7_l5KynvKMdqSXEjxPyh?usp=drive_link" class="btn-evidencias" target="_blank">📱 Galería</a>
+              </div>
+            </td>
+            <td>
+            </td>
+            </tr>
+            <tr>
+              <td><strong>Producto<br>(Componente)</strong></td>
+              <td>Número de NNA que asistieron durante el mes a clases artísticas.</td>
+              <td>Total por todos los centros 74,2% (498), Arroyo 90% (90), Betania 58% (49), Lucero 59% (95), Padre Misericordioso A 61% (42),  Padre Misericordioso B 66% (59), Jerusalén 51% (66), Santo Domingo 59% (67), San Juan de Dios 59% (20) </td>
+              <td class="evidencias-cell">
+              <div class="btn-group">
+                <a href="https://docs.google.com/spreadsheets/d/1pr7df0SooG_nfMwO-6mDZoVA-hc4IehxDF0DwBEgqe0/edit?usp=sharing" class="btn-evidencias" target="_blank">✅ Asistencia</a>
+                <a href="https://drive.google.com/drive/folders/1AC-BjyYXiEcB7_l5KynvKMdqSXEjxPyh?usp=drive_link" class="btn-evidencias" target="_blank">📷 Galería</a>
+                <a href="https://musicalaescuela.github.io/Manager" class="btn-evidencias" target="_blank">📱 Aplicativo Manager</a>
+              </div>
+            </td>
+            </tr>
+            <tr>
+              <td><strong>Gestión<br>(Actividades)</strong></td>
+              <td>Número de sesiones de formación artística realizadas en cada disciplina.</td>
+              <td>Total por todos los centros 94.4% (338), Arroyo 100% (48), Betania 87.5 (28), Lucero 94.1% (64), Padre Misericordioso 90.9 (40), Jerusalén 92.9% (52), Santo Domingo 92.9% (52), San Juan de Dios 100% (6).</td>
+              <td class="evidencias-cell">
+              <div class="btn-group">
+                <a href="https://docs.google.com/spreadsheets/d/1BluCFA9qP4RjJI5Jy9glsp_vzCL0paZrt90-U3cuDyc/edit?usp=sharing" class="btn-evidencias" target="_blank">🧠 Seguimiento de sesiones</a>
+                <a href="https://musicala.github.io/muestras/" class="btn-evidencias" target="_blank">🎭 Muestras de proceso</a>
+                <a href="https://musicalaescuela.github.io/Manager" class="btn-evidencias" target="_blank">📱 Aplicativo Manager</a>
+              </div>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <section class="evaluacion">
+        <h3>Evaluación Cualitativa</h3>
+        <div class="tabla-evaluacion">
+          <div class="fila">
+            <div class="etiqueta">RETROALIMENTACIÓN CÁLIDA</div>
+            <div class="contenido">
+              <p>
+                Durante junio, el programa consolidó avances importantes en la integración artística de niñas, niños y adolescentes, especialmente en las sedes que mantuvieron continuidad y buena asistencia. Se evidenció una apropiación metodológica más sólida por parte de los docentes, con énfasis en el enfoque CREA (Concentración, Recursos, Exploración y Adaptabilidad).
+              </p>
+              <p>
+                La incorporación de retroalimentaciones ágiles y la documentación de experiencias creativas continuó fortaleciéndose a través de portafolios y registros cualitativos. Además, se destacaron momentos de alta participación en eventos comunitarios y actividades extracurriculares, así como el compromiso docente para adaptar los talleres a situaciones externas, lo que evidencia una actitud flexible y resiliente del equipo.
+              </p>
+            </div>
+          </div>
+          <div class="fila">
+            <div class="etiqueta">RETROALIMENTACIÓN FRÍA</div>
+            <div class="contenido">
+              <p>
+                Durante el mes de junio se identificaron situaciones en algunas sedes que pusieron en evidencia la necesidad de fortalecer ciertos aspectos del programa, especialmente en relación con los protocolos de convivencia, los canales de comunicación y las estrategias pedagógicas para favorecer la participación plena de todos los estudiantes.
+              </p>
+              <p>
+                Estas situaciones incluyeron desafíos en el uso y disponibilidad de espacios adecuados, así como momentos de desarticulación o tensiones que fueron oportunamente gestionadas a través del trabajo conjunto entre Musicala, los equipos docentes y los centros educativos.
+              </p>
+              <p>
+                Gracias a esta articulación, fue posible dar respuesta inmediata y continuar con el proceso formativo. No obstante, estas experiencias reafirman la importancia de anticiparse mediante herramientas y estrategias que promuevan ambientes colaborativos, pedagógicos y respetuosos, en los que se facilite la adaptación y participación activa de toda la comunidad educativa.
+              </p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>  
+
+      <section class="cierre-informe">
+        <div class="recomendaciones">
+        <h3>Recomendaciones y/o sugerencias para próximas implementaciones</h3>
+        <ol>
+          <li>
+            <strong>Fortalecimiento de estrategias pedagógicas inclusivas:</strong>
+            Es importante seguir acompañando a los docentes en el diseño de metodologías que promuevan la participación activa de todos los NNA, especialmente en grupos con menor permanencia o fluctuaciones en la asistencia.
+          </li>
+          <li>
+            <strong>Consolidación de protocolos de comunicación y resolución de situaciones:</strong>
+            Avanzar en la sistematización y divulgación de rutas claras para el manejo de tensiones o desarticulaciones, asegurando que todos los actores (docentes, líderes, coordinación) conozcan y apliquen las herramientas disponibles.
+          </li>
+          <li>
+            <strong>Monitoreo temprano y seguimiento a la asistencia:</strong>
+            Activar alertas internas que permitan detectar patrones de baja asistencia en determinadas sedes o jornadas, para intervenir de forma proactiva con estrategias de motivación y fortalecimiento del vínculo pedagógico.
+          </li>
+          <li>
+            <strong>Acompañamiento diferenciado en sedes con mayores fluctuaciones:</strong>
+            Establecer visitas regulares a los centros que presentan variabilidad en asistencia o participación, generando espacios de diálogo, escucha activa y ajustes metodológicos según el contexto.
+          </li>
+          <li>
+            <strong>Consolidación del portafolio digital y documentación del proceso:</strong>
+            Continuar ampliando el uso del portafolio docente como herramienta de reflexión pedagógica, incluyendo registros fotográficos, bitácoras de clase y análisis de aprendizajes por grupo.
+          </li>
+        </ol>
+      </div>   
+      
+        <section class="comentarios-finales">
+        <h3>Comentarios finales</h3>
+        <div class="contenido">
+          <p>
+            Durante este cuarto mes de implementación, el programa Casas Kiwa continúa afianzando su propósito pedagógico y artístico en cada sede. El compromiso de docentes, líderes de centro y equipo coordinador ha sido fundamental para sostener espacios creativos, seguros y significativos para niñas, niños y adolescentes.
+          </p>
+          <p>
+            Más allá de los logros por disciplina, se abre la posibilidad de explorar una mayor coordinación entre componentes y equipos, no necesariamente desde áreas separadas, sino desde una mirada compartida que permita construir experiencias integrales. Escenarios como <strong>AlegreMente</strong> invitan a repensar cómo fortalecer la conexión entre el arte, lo emocional, lo físico y lo cognitivo, en clave de proceso colectivo.
+          </p>
+          <p>
+            Nuestro compromiso desde Musicala es seguir revisando y diseñando estrategias que favorezcan esa integración, promoviendo un trabajo en red que beneficie a los NNA desde múltiples dimensiones de su desarrollo.
+          </p>
+          <p>
+            En este camino, las <strong>Muestras de Proceso</strong> se consolidan como espacios fundamentales. Son más que exhibiciones: representan momentos vivenciales, conciertos, actividades y puestas en escena donde los NNA no solo muestran lo aprendido, sino que evidencian que ese conocimiento tiene valor, propósito y poder creativo. Son oportunidades para que cada participante reconozca su propio proceso y lo comparta con otros de manera activa y significativa.
+          </p>
+        </div>
+      </section>
+      <hr style="margin: 2rem 0;">
+      
+        </div>
+        <section class="aprobacion-editable">
+          <h3>Aprobación del cierre (Subdirección de Gestión Social y RRII):</h3>
+          <form>
+            <table class="tabla-aprobacion">
+              <tr>
+                <th rowspan="3">APROBADO</th>
+                <td>
+                  <label><input type="radio" name="aprobacion" value="Sí" onclick="toggleComentario(false)"> Sí</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label><input type="radio" name="aprobacion" value="Sí con recomendaciones" onclick="toggleComentario(true)">
+                    Sí con recomendaciones
+                  </label>
+                  <textarea id="comentario-recomendaciones" placeholder="Especificar recomendaciones..." style="display: none;"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label><input type="radio" name="aprobacion" value="No" onclick="toggleComentario(false)"> No</label>
+                </td>
+              </tr>              
+            </table>
+          </form>
+        
+          <div class="firmas-campos">
+          <!-- Columna izquierda: Jimmy -->
+          <div class="columna-firma tarjeta-firma">
+            <h4>Responsable del Proyecto</h4>
+            <p><strong>Nombre:</strong><br>Jimmy Alexander Caballero Moreno</p>
+            <p><strong>Proyecto:</strong><br>Casas Kiwa</p>
+            <p><strong>Fecha:</strong><br>25 de Junio del 2025</p>
+            <p><strong>Firma:</strong></p>
+            <div class="firma-vacia"></div>
+          </div>
+
+          <!-- Columna derecha: Subdirección -->
+          <div class="columna-firma tarjeta-firma">
+            <h4>Subdirección de Gestión Social y RRII</h4>
+            <label for="nombre-sub">Nombre:</label>
+            <input type="text" id="nombre-sub" placeholder="Nombre del subdirector">
+
+            <label for="fecha-sub">Fecha:</label>
+            <input type="date" id="fecha-sub">
+
+            <label>Firma:</label>
+            <div class="firma-vacia"></div>
+          </div>
+          </div>
+        </section>           
+      
+        <section class="tabla-autorizacion">
+          <h3>1. Tabla de Aprobación y Autorización de Documentos</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Elaborado por:</th>
+                <th>Aprobado por:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>NOMBRE:</strong> <input type="text" placeholder="Nombre del elaborador" value="Mario Ujueta"></td>
+                <td><strong>NOMBRE:</strong> <input type="text" placeholder="Nombre del aprobador" value="Yesika Camargo"></td>
+              </tr>
+              <tr>
+                <td><strong>CARGO:</strong> <input type="text" placeholder="Cargo del elaborador" value="Coord. Programa y Proyectos"></td>
+                <td><strong>CARGO:</strong> <input type="text" placeholder="Cargo del aprobador" value="Líder de Calidad, evaluación y control"></td>
+              </tr>
+              <tr>
+                <td><strong>FECHA:</strong> <input type="date" value=""></td>
+                <td><strong>FECHA:</strong> <input type="date" value=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>        
+      
+        <section class="control-cambios">
+          <h3>2. Control de Cambios</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Versión</th>
+                <th>Fecha de Edición</th>
+                <th>Acta Aprobación</th>
+                <th>Motivo</th>
+                <th>Descripción del Cambio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" value=""></td>
+                <td><input type="date" value=""></td>
+                <td><input type="text" value=""></td>
+                <td><input type="text" value=""></td>
+                <td>
+                  <textarea>Ingresa tu texto aquí...</textarea>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="text" value=""></td>
+                <td><input type="date" value=""></td>
+                <td><input type="text" value=""></td>
+                <td><input type="text" value=""></td>
+                <td>
+                  <textarea>
+Ingresa tu texto aquí...
+                  </textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>        
+
+    </section>
+  </main>
+
+  <div class="no-print botonera">
+    <button onclick="prepararParaImprimir()">🖨️ Descargar Informe en PDF</button>
+    <a href="https://lookerstudio.google.com/reporting/46386242-adff-436e-81b3-b30b638f6d63/page/p_j7crb5eltd" target="_blank" class="boton-lookerstudio">
+      📈 Ver y descargar el Tablero en Looker Studio
+    </a>    
+  </div>  
+
+  <footer>
+    <p>&copy; 2025 Musicala y Fundación San Antonio</p>
+  </footer>
+
+</body>
+</html>
+
+<script>
+  function prepararParaImprimir() {
+    const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+    const textareas = document.querySelectorAll('textarea');
+    const radios = document.querySelectorAll('input[type="radio"]');
+
+    // Mostrar valores de inputs
+    inputs.forEach(input => {
+      const span = document.createElement('span');
+      span.textContent = input.value || '________________';
+      span.classList.add('solo-impresion');
+      input.style.display = 'none';
+      input.parentNode.insertBefore(span, input);
+    });
+
+    // Mostrar valores de textareas
+    textareas.forEach(textarea => {
+      const span = document.createElement('span');
+      span.textContent = textarea.value || '________________';
+      span.classList.add('solo-impresion');
+      textarea.style.display = 'none';
+      textarea.parentNode.insertBefore(span, textarea);
+    });
+
+    // Mostrar opción seleccionada del grupo de radios (solo uno)
+    // Mostrar opción seleccionada del grupo de radios (solo uno)
+    const seleccionado = document.querySelector('input[type="radio"]:checked');
+    if (seleccionado) {
+      const valor = seleccionado.value;
+      const span = document.createElement('span');
+      span.textContent = valor;
+      span.classList.add('solo-impresion', 'badge');
+
+      // Añade color según valor
+      if (valor.includes('Sí')) {
+        span.classList.add('badge-verde');
+      } else if (valor === 'No') {
+        span.classList.add('badge-rojo');
+      }
+
+      seleccionado.style.display = 'none';
+      seleccionado.parentNode.insertBefore(span, seleccionado);
+    }
+
+    // Imprimir y restaurar
+    setTimeout(() => {
+      window.print();
+      document.querySelectorAll('.solo-impresion').forEach(span => span.remove());
+      inputs.forEach(input => input.style.display = '');
+      textareas.forEach(textarea => textarea.style.display = '');
+      radios.forEach(radio => radio.style.display = '');
+    }, 100);
+  }
+</script>
